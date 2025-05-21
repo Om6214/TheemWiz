@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TheemWiz</title>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <body>
+    <nav
+      class="w-full flex items-center bg-[#28293E] justify-between px-4 md:px-20 py-4 text-white shadow-md relative"
+    >
+      <!-- Logo -->
+      <img src="/assets/images/logo.png" alt="Logo" class="h-8" />
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-20 font-medium">
+        <li><a href="#about" class="hover:text-indigo-400 transition">About</a></li>
+        <li>
+          <a href="#portfolio" class="hover:text-indigo-400 transition">Services</a>
+        </li>
+        <li>
+          <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
+        </li>
+        <li><a href="#blog" class="hover:text-indigo-400 transition">Blog</a></li>
+      </ul>
+
+      <!-- Desktop Contact Button -->
+      <div class="hidden md:block">
+        <a
+          href="#contact"
+          class="px-6 py-2 text-white border border-white rounded-sm hover:bg-indigo-900 transition duration-200"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden p-2 focus:outline-none">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden absolute top-full left-0 w-full bg-[#28293E] md:hidden"
+      >
+        <ul class="flex flex-col items-center py-4 space-y-4">
+          <li>
+            <a
+              href="#about"
+              class="hover:text-indigo-400 transition"
+              onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#portfolio" class="hover:text-indigo-400 transition">Services</a>
+          </li>
+          <li>
+            <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
+          </li>
+          <li><a href="#blog" class="hover:text-indigo-400 transition">Blog</a></li>
+        </ul>
+        <div class="pb-4 text-center">
+          <a
+            href="#contact"
+            class="px-6 py-2 text-white border border-white rounded-sm hover:bg-indigo-900 transition duration-200"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <!-- hero section  -->
+
+    <section class="bg-[#28293E] text-white relative overflow-hidden">
+      <div
+        class="container mx-auto px-4 md:px-20 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8"
+      >
+        <!-- Text Content -->
+        <div class="md:w-1/2 relative z-10">
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+          >
+            We’re Help To Build Your Dream Project
+          </h1>
+          <p
+            class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed"
+          >
+            Agency provides a full service range including technical skills,
+            design, business understanding.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#"
+              class="bg-[#EF6D58] hover:bg-[#ff9c75] text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 text-lg font-semibold shadow-lg hover:shadow-xl"
+            >
+              How we work
+            </a>
+            <a
+              href="#"
+              class="border border-gray-600 hover:border-indigo-500 text-gray-300 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 text-lg font-semibold"
+            >
+              Contact us
+            </a>
+          </div>
+          <!-- single testimonial -->
+          <div
+            class="mt-12 border-l-2 border-[#EF6D58] pl-6 hover:border-opacity-80 transition-all duration-300"
+          >
+            <div class="flex items-center gap-4">
+              <img
+                src="/assets/images/Bitmap.png"
+                alt="Meta Inc. testimonial author"
+                class="w-12 h-12 rounded-full object-cover border-2 border-[#EF6D58]/20"
+              />
+              <div>
+                <p class="text-base md:text-base italic text-gray-300 mb-2">
+                  "Put themselves in the merchant's shoes"
+                </p>
+                <p class="text-sm text-gray-400 font-medium">Meta Inc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Container -->
+        <div class="md:w-1/2 hidden lg:block relative mt-12 md:mt-0">
+          <img
+            src="/assets/images/pic.png"
+            alt="TheemWiz Dashboard Preview"
+            class="w-full h-auto object-contain rounded-xl transform hover:scale-105 transition-transform duration-300"
+          />
+          <!-- Gradient Blur Effect -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-2xl -z-10"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Animated Background Elements -->
+      <div class="absolute top-0 left-0 w-full h-full">
+        <div
+          class="absolute w-96 h-96 bg-indigo-500/10 rounded-full -top-48 -left-48 animate-pulse"
+        ></div>
+        <div
+          class="absolute w-64 h-64 bg-purple-500/10 rounded-full bottom-0 right-0 animate-pulse delay-300"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Company Partners -->
+    <div class="py-12 bg-[#fcf4f2]">
+      <div class="container mx-auto px-4 md:px-20">
+        <div
+          class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 xl:gap-16"
+        >
+          <!-- Partner Logos with hover effects -->
+          <img
+            src="/assets/images/Bitmap(1).png"
+            alt="Company 1"
+            class="h-8 md:h-10 lg:h-12 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          />
+          <img
+            src="/assets/images/Bitmap(2).png"
+            alt="Company 2"
+            class="h-8 md:h-8 lg:h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          />
+          <img
+            src="/assets/images/Bitmap(3).png"
+            alt="Company 3"
+            class="h-8 md:h-8 lg:h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          />
+          <img
+            src="/assets/images/Bitmap(4).png"
+            alt="Company 4"
+            class="h-8 md:h-8 lg:h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          />
+          <img
+            src="/assets/images/Bitmap(5).png"
+            alt="Company 5"
+            class="h-8 md:h-8 lg:h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto">
+      <hr class="border-t border-[#F3D1BF] w-[90%] mx-auto" />
+    </div>
+
+    <!-- Blog Section -->
+    <section id="about" class="py-16 md:py-24 bg-[#fcf4f2]">
+      <div
+        class="container mx-auto px-4 md:px-20 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20"
+      >
+        <!-- Image Section -->
+        <div class="lg:w-[40%] relative group">
+          <img
+            src="/assets/images/pic(1).png"
+            alt="Design team working"
+            class="w-full h-auto object-cover"
+          />
+          <div class="absolute inset-0"></div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="lg:w-[40%]">
+          <div class="max-w-2xl">
+            <span
+              class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase mb-4 block"
+            >
+              About Agency
+            </span>
+            <h2
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#391400] mb-6 leading-tight"
+            >
+              An Experience Design Agency That Delivers
+            </h2>
+            <p class="text-lg text-[#391400] mb-4 font-medium">
+              Full Service Range Including
+            </p>
+            <p class="text-[#391400A3] mb-8 leading-relaxed">
+              Ability to put themselves in the merchant's shoes. It is meant to
+              partner on the long run, and work as an extension of the
+              merchant's team.
+            </p>
+
+            <a
+              href="#"
+              class="inline-block bg-[#fffff] text-[#391400] px-8 py-4 rounded-sm font-semibold hover:bg-[#ff7f69] transition-all duration-300 transform hover:-translate-y-1"
+            >
+              About us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Section -->
+    <section class="py-16 md:py-24 bg-[#fcf4f2]">
+      <div class="container mx-auto px-4 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 text-center">
+          <!-- Stat Item 1 -->
+          <div class="p-6 md:p-8 relative border-2">
+            <div class="text-4xl md:text-5xl font-bold text-[#391400] mb-2">
+              42%
+            </div>
+            <p class="text-lg text-[#391400] font-medium">
+              Years of Experience
+            </p>
+            <div
+              class="hidden md:block absolute right-0 top-1/2 h-16 w-px bg-gray-200 -translate-y-1/2"
+            ></div>
+          </div>
+
+          <!-- Stat Item 2 -->
+          <div class="p-6 md:p-8 relative border-2">
+            <div class="text-4xl md:text-5xl font-bold text-[#391400] mb-2">
+              73+
+            </div>
+            <p class="text-lg text-gray-600 font-medium">Agency Members</p>
+            <div
+              class="hidden md:block absolute right-0 top-1/2 h-16 w-px bg-gray-200 -translate-y-1/2"
+            ></div>
+          </div>
+
+          <!-- Stat Item 3 -->
+          <div class="p-6 md:p-8 border-2">
+            <div class="text-4xl md:text-5xl font-bold text-[#391400] mb-2">
+              5K+
+            </div>
+            <p class="text-lg text-[#391400] font-medium">Projects Completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="blog" class="py-4 md:py-4 bg-[#fcf4f2]">
+      <div
+        class="container mx-auto px-4 md:px-20 grid md:grid-cols-2 gap-12 items-center justify-center"
+      >
+        <!-- Content Section -->
+        <div class="max-w-xl">
+          <span
+            class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+          >
+            Work Process
+          </span>
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6 leading-tight"
+          >
+            Making Your Projects Look Awesome
+          </h2>
+          <p class="text-lg text-[#391400A3] mb-8 leading-relaxed">
+            Technical skills, design, business understanding, and the ability to
+            put ourselves in the merchant's shoes.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center text-[#391400A3] font-semibold hover:text-[#ff7f69] transition-colors duration-300 group"
+          >
+            Read More
+            <svg
+              class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex items-center gap-6 p-6">
+            <h1 class="text-6xl font-bold">1</h1>
+            <div>
+              <p class="text-[#391400] text-xl font-bold">
+                Full service range including
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-center gap-6 p-6">
+            <h1 class="text-6xl font-bold">2</h1>
+            <div>
+              <p class="text-[#391400] text-xl font-bold">
+                Technical skills, design, business
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex items-center gap-6 p-6">
+            <h1 class="text-6xl font-bold">3</h1>
+            <div>
+              <p class="text-[#391400] text-xl font-bold">
+                Themselves in the merchant's
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Reel Section -->
+    <section class="py-16 md:py-24 bg-[#fcf4f2]">
+      <div
+        class="container mx-auto px-4 md:px-20 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Video Player Container -->
+        <div
+          class="relative group rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+        >
+          <div class="aspect-w-16 aspect-h-9">
+            <!-- Video Embed -->
+            <video
+              class="w-full h-full object-cover"
+              poster=""
+              id="customVideo"
+            >
+              <source
+                src="https://file-examples.com/storage/fe062d525c682cad199a167/2017/04/file_example_MP4_1280_10MG.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+
+          <!-- Custom Play Button -->
+          <div
+            id="playButton"
+            class="absolute inset-0 flex items-center justify-center cursor-pointer"
+          >
+            <div
+              class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-12 h-12 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+          ></div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="max-w-xl md:pl-12">
+          <span
+            class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+          >
+            Video Reel
+          </span>
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#391400] mt-4 mb-6 leading-tight"
+          >
+            Unlock The Greatest Value Possible
+          </h2>
+          <p class="text-lg text-[#391400A3] leading-relaxed">
+            Through innovative design, business understanding, and the unique
+            ability to put ourselves in the merchant's shoes, we create
+            partnerships that drive real results.
+          </p>
+        </div>
+      </div>
+
+      <style>
+        #customVideo::-webkit-media-controls {
+          display: none !important;
+        }
+      </style>
+
+      <script>
+        const video = document.getElementById("customVideo");
+        const playButton = document.getElementById("playButton");
+
+        playButton.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+            playButton.style.display = "none";
+          } else {
+            video.pause();
+            playButton.style.display = "flex";
+          }
+        });
+
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+            playButton.style.display = "none";
+          } else {
+            video.pause();
+            playButton.style.display = "flex";
+          }
+        });
+      </script>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 md:py-24 bg-[#28293E]">
+      <div class="container mx-auto px-4 md:px-20">
+        <!-- Section Header -->
+        <div class="text-center mb-12 md:mb-16">
+          <span
+            class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+          >
+            PORTFOLIO
+          </span>
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight"
+          >
+            Latest Work
+          </h2>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 md:mb-16">
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-100 hover:text-[#EF6D58] transition-colors font-medium border-b-2 border-transparent hover:border-[#EF6D58]"
+          >
+            Show All
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-100 hover:text-[#EF6D58] transition-colors font-medium border-b-2 border-transparent hover:border-[#EF6D58]"
+          >
+            Design
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-100 hover:text-[#EF6D58] transition-colors font-medium border-b-2 border-transparent hover:border-[#EF6D58]"
+          >
+            Branding
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-100 hover:text-[#EF6D58] transition-colors font-medium border-b-2 border-transparent hover:border-[#EF6D58]"
+          >
+            Illustration
+          </a>
+          <a
+            href="#"
+            class="px-6 py-2 text-gray-100 hover:text-[#EF6D58] transition-colors font-medium border-b-2 border-transparent hover:border-[#EF6D58]"
+          >
+            Motion
+          </a>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Portfolio Item 1 -->
+          <article
+            class="group relative overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div class="aspect-square overflow-hidden">
+              <img
+                src="/assets/images/Bitmap(6).png"
+                alt="Sofa Design Project"
+                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end"
+            >
+              <span
+                class="bg-[#EF6D58] text-white text-sm px-4 py-1 rounded-full absolute top-4 right-4"
+              >
+                Design
+              </span>
+              <h3 class="text-2xl font-bold text-white">Sofa</h3>
+            </div>
+          </article>
+
+          <!-- Portfolio Item 2 -->
+          <article
+            class="group relative overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-shadow lg:col-span-2"
+          >
+            <div class="aspect-[2/1] overflow-hidden">
+              <img
+                src="/assets/images/Bitmap(7).png"
+                alt="Keyboard Branding Project"
+                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end"
+            >
+              <span
+                class="bg-[#EF6D58] text-white text-sm px-4 py-1 rounded-full absolute top-4 right-4"
+              >
+                Branding
+              </span>
+              <h3 class="text-2xl font-bold text-white">Keyboard</h3>
+            </div>
+          </article>
+
+          <!-- Portfolio Item 3 -->
+          <article
+            class="group relative overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-shadow lg:col-span-2"
+          >
+            <div class="aspect-[2/1] overflow-hidden">
+              <img
+                src="/assets/images/Bitmap(8).png"
+                alt="Work Media Illustration"
+                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end"
+            >
+              <span
+                class="bg-[#EF6D58] text-white text-sm px-4 py-1 rounded-full absolute top-4 right-4"
+              >
+                Illustration
+              </span>
+              <h3 class="text-2xl font-bold text-white">Work Media</h3>
+            </div>
+          </article>
+
+          <!-- Portfolio Item 4 -->
+          <article
+            class="group relative overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div class="aspect-square overflow-hidden">
+              <img
+                src="/assets/images/Bitmap(9).png"
+                alt="DDDone Motion Project"
+                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end"
+            >
+              <span
+                class="bg-[#EF6D58] text-white text-sm px-4 py-1 rounded-full absolute top-4 right-4"
+              >
+                Motion
+              </span>
+              <h3 class="text-2xl font-bold text-white">DDDone</h3>
+            </div>
+          </article>
+        </div>
+
+        <!-- Explore Button -->
+        <div class="text-center">
+          <button
+            class="bg-[#28293E] border-2 text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#ff7f69] transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+          >
+            Explore More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section class="relative py-24 bg-[#28293E]">
+      <div
+        class="container mx-auto px-4 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12"
+      >
+        <!-- Main Content -->
+        <div class="relative lg:w-full">
+          <!-- Background Rectangle -->
+          <img
+            src="/assets/images/Rectangle.png"
+            alt=""
+            class="w-full h-[300px] object-cover rounded-2xl shadow-2xl"
+          />
+
+          <!-- Top Left Icon -->
+          <img
+            src="/assets/images/icon.png"
+            alt=""
+            class="absolute -top-12 -left-0 w-20 h-20 md:w-24 md:h-24 z-10"
+          />
+
+          <!-- Text Content -->
+          <div class="absolute top-16 left-6 z-10 space-y-4">
+            <h5
+              class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+            >
+              GET STARTED
+            </h5>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+              We Help Companies<br />
+              Move Faster
+            </h1>
+            <button
+              class="bg-[#EF6D58] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#ff7f69] transition-all"
+            >
+              Contact us
+            </button>
+          </div>
+
+          <!-- Centered Block Image -->
+          <img
+            src="/assets/images/block.png"
+            alt=""
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-64 animate-pulse z-0"
+          />
+
+          <!-- Right Floating Image -->
+          <img
+            src="/assets/images/Bitmap(10).png"
+            alt=""
+            class="absolute hidden lg:block right-[50px] w-48 h-[50vh] bottom-0 z-0"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="py-16 md:py-24 bg-[#28293E]">
+      <div class="container mx-auto px-4 md:px-20">
+        <!-- Section Header -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-16"
+        >
+          <div class="text-center md:text-left mb-8 md:mb-0">
+            <span
+              class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+            >
+              OUR TEAM
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">
+              Team of Designers and Developers
+            </h2>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="flex gap-4">
+            <button
+              class="team-prev-btn w-12 h-12 rounded-full bg-white shadow-lg hover:bg-[#EF6D58] transition-colors duration-300 flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-[#28293E] hover:text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              class="team-next-btn w-12 h-12 rounded-full bg-white shadow-lg hover:bg-[#EF6D58] transition-colors duration-300 flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-gray-800 hover:text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Team Carousel -->
+        <div class="relative overflow-hidden">
+          <div
+            class="team-carousel flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8"
+          >
+            <!-- Team Member 1 -->
+            <div class="flex-shrink-0 w-[calc(100vw-32px)] sm:w-[calc(25%-18px)] snap-center">
+              <div class="group relative bg-[#28293E]">
+                <div class="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src="/assets/images/Bitmap(11).png"
+                    alt="Azah Anyeni"
+                    class="w-full h-80 object-cover"
+                  />
+                  <div class="absolute"></div>
+                </div>
+                <div class="p-6 text-start">
+                  <h3 class="text-xl font-bold text-white mb-1">Azah Anyeni</h3>
+                  <p class="text-gray-400">Designer</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Repeat similar structure for other team members -->
+            <!-- Team Member 2 -->
+            <div class="flex-shrink-0 w-[calc(100vw-32px)] sm:w-[calc(25%-18px)] snap-center">
+              <div class="group relative bg-[#28293E]">
+                <div class="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src="/assets/images/Bitmap(12).png"
+                    alt="Roelof Bekkenenks"
+                    class="w-full h-80 object-cover"
+                  />
+                  <div class="absolute"></div>
+                </div>
+                <div class="p-6 text-start">
+                  <h3 class="text-xl font-bold text-white mb-1">
+                    Roelof Bekkenenks
+                  </h3>
+                  <p class="text-gray-400">React Developer</p>
+                </div>
+              </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="flex-shrink-0 w-[calc(100vw-32px)] sm:w-[calc(25%-18px)] snap-center">
+              <div class="group relative bg-[#28293E]">
+                <div class="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src="/assets/images/Bitmap(13).png"
+                    alt="Roelof Bekkenenks"
+                    class="w-full h-80 object-cover"
+                  />
+                  <div class="absolute"></div>
+                </div>
+                <div class="p-6 text-start">
+                  <h3 class="text-xl font-bold text-white mb-1">
+                    Leonardo Oliveira
+                  </h3>
+                  <p class="text-gray-400">illustrator</p>
+                </div>
+              </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="flex-shrink-0 w-[calc(100vw-32px)] sm:w-[calc(25%-18px)] snap-center">
+              <div class="group relative bg-[#28293E]">
+                <div class="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src="/assets/images/Bitmap(14).png"
+                    alt="Roelof Bekkenenks"
+                    class="w-full h-80 object-cover"
+                  />
+                  <div class="absolute"></div>
+                </div>
+                <div class="p-6 text-start">
+                  <h3 class="text-xl font-bold text-white mb-1">
+                    Izabella Tabakova
+                  </h3>
+                  <p class="text-gray-400">Izabella Tabakova</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-[calc(100vw-32px)] sm:w-[calc(25%-18px)] snap-center">
+              <div class="group relative bg-[#28293E]">
+                <div class="relative overflow-hidden rounded-t-xl">
+                  <img
+                    src="/assets/images/Bitmap(14).png"
+                    alt="Roelof Bekkenenks"
+                    class="w-full h-80 object-cover"
+                  />
+                  <div class="absolute"></div>
+                </div>
+                <div class="p-6 text-start">
+                  <h3 class="text-xl font-bold text-white mb-1">
+                    Izabella Tabakova
+                  </h3>
+                  <p class="text-gray-400">Izabella Tabakova</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Simple carousel functionality
+      const carousel = document.querySelector(".team-carousel");
+      const nextBtn = document.querySelector(".team-next-btn");
+      const prevBtn = document.querySelector(".team-prev-btn");
+      const itemWidth = document.querySelector(
+        ".team-carousel > div"
+      ).offsetWidth;
+
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: itemWidth, behavior: "smooth" });
+      });
+
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -itemWidth, behavior: "smooth" });
+      });
+    </script>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 md:py-24 bg-[#fcf4f2]">
+      <div class="container mx-auto px-4 md:px-20">
+        <!-- Section Header -->
+        <div class="text-center mb-12 md:mb-16">
+          <span
+            class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+          >
+            PRICING
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+            Check Our Pricing Plans
+          </h2>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+          <!-- Consultation Plan -->
+          <div class="bg-[#fcf4f2] p-8 rounded-md">
+            <div class="mb-6">
+              <p class="text-gray-500 font-medium">Consultation</p>
+              <h3 class="text-4xl font-bold text-gray-900 my-4">FREE</h3>
+              <p class="text-gray-500">
+                Your digital marketing efforts, instead of handling in-house.
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Brand Design
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                Market analysis
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                Production
+              </li>
+              <!-- Repeat for other features -->
+            </ul>
+            <button
+              class="w-full py-3 border-2 border-[#EF6D58] text-[#EF6D58] rounded-lg hover:bg-[#EF6D58] hover:text-white transition-colors"
+            >
+              Contact us
+            </button>
+          </div>
+
+          <!-- Popular Design Plan -->
+          <div class="relative bg-white p-8 rounded-2xl z-10">
+            <div
+              class="absolute top-4 left-8 bg-[#EF6D58] text-white px-4 py-1"
+            >
+              Popular
+            </div>
+            <div class="mb-6 mt-10">
+              <p class="text-gray-500 font-medium">Design</p>
+              <h3 class="text-4xl font-bold text-gray-900 my-4">$1500</h3>
+              <p class="text-gray-500">
+                Provide your business with a variety of digital solutions to
+                promote.
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Brand Design
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Market analysis
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+                Production
+              </li>
+              <!-- Repeat for other features -->
+            </ul>
+            <button
+              class="w-full py-3 bg-[#EF6D58] text-white rounded-lg hover:bg-[#ff7f69] transition-colors"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Design-Code Plan -->
+          <div class="bg-[#fcf4f2] p-8 rounded-2xl">
+            <div class="mb-6">
+              <p class="text-gray-500 font-medium">Design-Code</p>
+              <h3 class="text-4xl font-bold text-gray-900 my-4">$2900</h3>
+              <p class="text-gray-500">
+                Help you hit your marketing goals and grow your business.
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Brand Design
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Market analysis
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg
+                  class="w-5 h-5 text-[#EF6D58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Production
+              </li>
+              <!-- Repeat for other features -->
+            </ul>
+            <button
+              class="w-full py-3 border-2 border-[#EF6D58] text-[#EF6D58] rounded-lg hover:bg-[#EF6D58] hover:text-white transition-colors"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-[#fcf4f2]">
+      <div class="container mx-auto px-4 md:px-20 grid md:grid-cols-2 gap-12">
+        <!-- Left Content -->
+        <div class="max-w-xl">
+          <span
+            class="text-[#EF6D58] text-sm font-semibold tracking-widest uppercase"
+          >
+            FAQ
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-gray-600 mb-8">
+            A digital agency is a business you hire to outsource your digital
+            marketing efforts, instead of handling in-house.
+          </p>
+          <a
+            href="#"
+            class="inline-flex items-center text-[#EF6D58] font-semibold hover:text-[#ff7f69] transition-colors"
+          >
+            Contact us
+            <svg
+              class="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- FAQ Items -->
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="group transition-all duration-300">
+            <button
+              class="w-full text-left p-6 bg-[#fcf4f2] group-[.active]:bg-white rounded-lg"
+            >
+              <div class="flex justify-between items-center">
+                <h3 class="font-medium text-gray-900">
+                  What is your design process?
+                </h3>
+                <svg
+                  class="w-6 h-6 text-[#EF6D58] transform transition-transform duration-300 group-[.active]:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+              <div
+                class="mt-4 text-gray-600 hidden group-[.active]:block border-t border-gray-100 pt-4"
+              >
+                Our design process follows a user-centered approach, starting
+                with research...
+              </div>
+            </button>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="group transition-all duration-300">
+            <button
+              class="w-full text-left p-6 bg-[#fcf4f2] group-[.active]:bg-white rounded-lg"
+            >
+              <div class="flex justify-between items-center">
+                <h3 class="font-medium text-gray-900">
+                  How do you handle revisions?
+                </h3>
+                <svg
+                  class="w-6 h-6 text-[#EF6D58] transform transition-transform duration-300 group-[.active]:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+              <div
+                class="mt-4 text-gray-600 hidden group-[.active]:block border-t border-gray-100 pt-4"
+              >
+                We offer unlimited revisions during the design phase to ensure
+                complete satisfaction...
+              </div>
+            </button>
+          </div>
+
+          <!-- Add more FAQ items following the same pattern -->
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".group button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.closest(".group");
+          faqItem.classList.toggle("active");
+        });
+      });
+    </script>
+    <!-- Get in Touch Section -->
+    <section id="contact" class="relative py-16 md:py-24 bg-[#fcf4f2]">
+      <div class="container mx-auto md:px-0">
+        <div class="relative rounded-md overflow-hidden">
+          <!-- Map Background -->
+          <img
+            src="/assets/images/map.png"
+            alt="Location Map"
+            class="w-full h-[600px] object-cover"
+          />
+
+          <!-- Contact Form Overlay -->
+          <div
+            class="absolute top-1/2 left-4 md:left-20 -translate-y-1/2 w-full max-w-md bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg"
+          >
+            <h2 class="text-md font-bold text-gray-900 mb-6">Get in Touch</h2>
+
+            <form class="space-y-6">
+              <div>
+                <label class="block text-gray-700 mb-2 font-medium" for="email"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#EF6D58] focus:border-transparent"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-gray-700 mb-2 font-medium"
+                  for="subject"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#EF6D58] focus:border-transparent"
+                  placeholder="How can we help?"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-gray-700 mb-2 font-medium"
+                  for="message"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#EF6D58] focus:border-transparent"
+                  placeholder="Your message..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-[#EF6D58] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#ff7f69] transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Location Pin -->
+          <img
+            src="/assets/images/pin.png"
+            alt="Location Pin"
+            class="absolute top-1/2 right-20 w-16 h-16 animate-bounce"
+          />
+
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#28293E] text-gray-300">
+      <div class="container mx-auto px-4 md:px-20 py-12">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <!-- Logo and Company Info -->
+          <div class="mb-8 md:mb-0">
+            <img
+              src="/assets/images/logo.png"
+              alt="Company Logo"
+              class="h-8 mb-6"
+            />
+          </div>
+
+          <!-- Menu Links -->
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-white font-semibold mb-4">MENU</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Links -->
+          <div class="mb-8 md:mb-0">
+            <h3 class="text-white font-semibold mb-4">SERVICE</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Design</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Development</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                  >See More</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">CONNECT</h3>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="p-2 bg-white/10 rounded-full hover:bg-[#EF6D58] transition-colors"
+                aria-label="Facebook"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="p-2 bg-white/10 rounded-full hover:bg-[#EF6D58] transition-colors"
+                aria-label="Twitter"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="p-2 bg-white/10 rounded-full hover:bg-[#EF6D58] transition-colors"
+                aria-label="Instagram"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright and Legal -->
+        <div class="border-t border-white/10 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+          >
+            <div class="order-2 md:order-1 text-center md:text-left">
+              Copyright © Laaqiq 2022 . All rights reserved.
+            </div>
+            <div class="order-1 md:order-2 flex gap-6">
+              <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                >Terms of Use</a
+              >
+              <a href="#" class="hover:text-[#EF6D58] transition-colors"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
